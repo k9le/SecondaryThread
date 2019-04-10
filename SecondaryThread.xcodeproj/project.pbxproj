@@ -13,6 +13,10 @@
 		C8E9279E225CB9DB0073465F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E9279D225CB9DB0073465F /* Assets.xcassets */; };
 		C8E927A1225CB9DB0073465F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E9279F225CB9DB0073465F /* LaunchScreen.storyboard */; };
 		C8E927A9225CB9F70073465F /* SecondaryThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E927A8225CB9F70073465F /* SecondaryThread.swift */; };
+		C8E927AB225E14F90073465F /* ThreadSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E927AA225E14F90073465F /* ThreadSource.swift */; };
+		C8E927AD225E50460073465F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E927AC225E50460073465F /* TableViewCell.swift */; };
+		C8E927AF225E57810073465F /* OutputFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E927AE225E57810073465F /* OutputFunc.swift */; };
+		C8E927B1225E5D930073465F /* Multicolore.otf in Resources */ = {isa = PBXBuildFile; fileRef = C8E927B0225E5D930073465F /* Multicolore.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		C8E927A0225CB9DB0073465F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8E927A2225CB9DB0073465F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8E927A8225CB9F70073465F /* SecondaryThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryThread.swift; sourceTree = "<group>"; };
+		C8E927AA225E14F90073465F /* ThreadSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSource.swift; sourceTree = "<group>"; };
+		C8E927AC225E50460073465F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C8E927AE225E57810073465F /* OutputFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputFunc.swift; sourceTree = "<group>"; };
+		C8E927B0225E5D930073465F /* Multicolore.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Multicolore.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		C8E92795225CB9D90073465F /* SecondaryThread */ = {
 			isa = PBXGroup;
 			children = (
+				C8E927B2225E5D980073465F /* Fonts */,
 				C8E92796225CB9D90073465F /* AppDelegate.swift */,
 				C8E92798225CB9D90073465F /* ViewController.swift */,
+				C8E927AC225E50460073465F /* TableViewCell.swift */,
 				C8E9279A225CB9D90073465F /* Main.storyboard */,
 				C8E9279D225CB9DB0073465F /* Assets.xcassets */,
 				C8E9279F225CB9DB0073465F /* LaunchScreen.storyboard */,
 				C8E927A2225CB9DB0073465F /* Info.plist */,
 				C8E927A8225CB9F70073465F /* SecondaryThread.swift */,
+				C8E927AA225E14F90073465F /* ThreadSource.swift */,
+				C8E927AE225E57810073465F /* OutputFunc.swift */,
 			);
 			path = SecondaryThread;
+			sourceTree = "<group>";
+		};
+		C8E927B2225E5D980073465F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C8E927B0225E5D930073465F /* Multicolore.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8E927A1225CB9DB0073465F /* LaunchScreen.storyboard in Resources */,
+				C8E927B1225E5D930073465F /* Multicolore.otf in Resources */,
 				C8E9279E225CB9DB0073465F /* Assets.xcassets in Resources */,
 				C8E9279C225CB9D90073465F /* Main.storyboard in Resources */,
 			);
@@ -138,8 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E927AD225E50460073465F /* TableViewCell.swift in Sources */,
 				C8E92799225CB9D90073465F /* ViewController.swift in Sources */,
 				C8E92797225CB9D90073465F /* AppDelegate.swift in Sources */,
+				C8E927AB225E14F90073465F /* ThreadSource.swift in Sources */,
+				C8E927AF225E57810073465F /* OutputFunc.swift in Sources */,
 				C8E927A9225CB9F70073465F /* SecondaryThread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

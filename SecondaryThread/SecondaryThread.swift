@@ -8,67 +8,43 @@
 
 import Foundation
 
-class SecondaryThread: Thread {
+final class SecondaryThread: Thread {
+    
+    private static var number: Int = 0
+    private let threadNamePrefix: String = "SecondaryCustom"
+    
+    static let runLoopModeString: String = "SecondaryThreadLoopMode"
+    
+    public static let source: ThreadSource = ThreadSource()
+
     
     override init() {
         super.init()
         
         qualityOfService = .utility
+        
+        
     }
     
     override func main() {
-        // calc pi
-        
-        
-        
+
         autoreleasepool {
-            
-            print("begin pi calculation, thread \(Thread.current)")
-            
-            let dateBegin = Date()
-            
-            srand48(Int(arc4random()))
-            
-            func rand(from: Double, to: Double) -> Double {
-                assert(to - from > 0)
-                let seed = drand48()
-                return seed * (to - from) + from
-            }
-            
-            /// The size of the rectangle
-            let a = 10.0
-            
-            /// The radius of the inner circle
-            let r = a / 2
-            
-            ///
-            let loopCount = 100000000
-            
-            var circleCount = 0
-            
-            let rangeLower = -5.0
-            let rangeUpper = 5.0
-            
-            for _ in 0..<loopCount {
-                let x = rand(from: rangeLower, to: rangeUpper)
-                let y = rand(from: rangeLower, to: rangeUpper)
-                
-                if x * x + y * y <= r * r {
-                    circleCount += 1
-                }
-            }
-            
-            let rate = Double(circleCount) / Double(loopCount)
-            let pi = (rate * a * a) / (r * r)
-            
-            
-            let dateEnd = Date()
-            
-            print("calculated, pi = \(pi), thread \(Thread.current)")
-            print("time = \(Int(dateEnd.timeIntervalSince(dateBegin)))")
+
+            SecondaryThread.number += 1
+            Thread.current.name = "\(threadNamePrefix) \(SecondaryThread.number)"
+
+            viewOutput("start secondary thread")
+
+            SecondaryThread.source.addToCurrentRunLoop()
+
+            repeat {
+                viewOutput("runloop repeat")
+                RunLoop.current.run(mode: RunLoop.Mode(SecondaryThread.runLoopModeString), before: Date.distantFuture)
+            } while(!isCancelled && !isFinished)
+
+            viewOutput("finish secondary thread")
         }
+
     }
-    
-    
     
 }
